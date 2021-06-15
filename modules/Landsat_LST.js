@@ -102,8 +102,8 @@ exports.collection = function(landsat, date_start, date_end, geometry, use_ndvi)
 
   var landsatTOA = ee.ImageCollection(collection_dict.get('TOA'))
                 .filter(ee.Filter.date(date_start, date_end))
-                .filterBounds(geometry)
-                .map(cloudmask.toa);
+                .filterBounds(geometry); //.map(cloudmask.toa);
+                
   
               
   // load Surface Reflectance collection for NDVI
